@@ -1,0 +1,37 @@
+#prod{
+    width: 300px;
+}
+.viewimage{
+    width: 400px;
+}
+.images2{
+    display: flex;
+    gap: 1.5em;
+    padding-top: 2.5em;
+    padding-left: 3em;
+    padding-bottom: 2.5em;
+}
+.viewp{
+    display: flex;
+}
+.desc{
+    padding-top: 2.7em;
+    padding-bottom: 2.5em;
+    padding-left: 2.5em;
+    padding-right: 10em;
+
+}
+#wish{
+    border-color:#866528  ;
+    color: #866528;
+}
+#cart{
+    color: white;
+    background-color:#866528;
+    border-color:#866528  ;
+}
+#wish:hover {
+    color: white;
+    background-color: #866528;
+    border-color: #866528;
+}

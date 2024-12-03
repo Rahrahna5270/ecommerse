@@ -1,0 +1,10 @@
+.foot{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.foots{
+    background-color: #dececee4;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 2em;
+}

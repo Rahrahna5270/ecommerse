@@ -1,0 +1,56 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}men's wear{% endblock title %}
+{% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+            <img src="{% static "images/nal1.jpeg" %}" class="d-block w-100" alt="...">
+
+        </div>
+        <div class="carousel-item">
+            <img src="{% static "images/rlay.jpg" %}" class="d-block w-100" alt="...">
+          </div>
+        
+        <div class="carousel-item">
+            <img src="{% static "images/bpp.jpg" %}" class="d-block w-100" alt="...">
+          </div>
+        
+      </div>
+  </div>
+<h5 style="text-align: center; color: darkolivegreen; padding-top: 1em;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">SHOP MEN'S WEAR</h5>
+<div class="menlist">
+    {% for subcategory in catcategories %}
+    {% if subcategory.category.name == "Men's Wear" or subcategory.category.name == "Men's Formal" %}
+        <li class="list1"  >
+            <a href="{% url 'sub' subcategory.id %}">
+                <button class="list2" style="padding-inline: 1.3em;">{{ subcategory.categoryname }}</button>
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}
+
+  
+
+</div>
+<div id="product-list">
+    {% for product in products %}
+    
+        <div id="product-item"  class="card" >
+            
+            <a  href="{% url 'viewprod' product.id %}">
+                <img src="{{product.image.url}}"  class="card-img-top" style="width: 300px;" alt="">
+                <div class="im" class="card-body"> 
+                    <h4 class="proname">{{ product.name }}</h4>
+                    <p class="prodes">{{ product.description }}</p>
+                    <p>Price: $ {{ product.rate }}</p>
+
+                </div>
+           
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock content %}

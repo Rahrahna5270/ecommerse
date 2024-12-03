@@ -1,0 +1,21 @@
+.order{
+    padding-left: 7em;
+}
+.orderimage{
+    width: 80px;
+}
+.heading{
+    padding-left: 4em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.head{
+    text-align: center;
+}
+#tab{
+    padding-inline: 7em;
+    padding-right: 22em;
+}
+.address{
+    padding-left: 5em;
+    padding-bottom: 1em;
+}

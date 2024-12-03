@@ -1,0 +1,29 @@
+.viewimages{
+    width: 200px;
+}
+.pronames{
+    color: rgb(22, 22, 22);
+    font-size: 16px;
+
+    
+}
+.second{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3em;
+   
+}
+.third1{
+    display: flex;
+    padding-bottom: 1.3em;
+    width: 900px;
+}
+.third{
+    padding-left: 5em;
+    padding-bottom: 1em;
+   
+}
+.third3{
+    padding-top: 2em;
+    padding-left: 2em;
+}

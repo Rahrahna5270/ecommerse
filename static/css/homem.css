@@ -1,0 +1,82 @@
+
+body{
+    margin: 0;
+}
+.last{
+    width: 60%;
+}
+
+.proname{
+    color: rgb(164, 142, 30);
+
+    
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+#product-list{
+    padding-left: 6em;
+    padding-top: 2em;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    padding-right: 6em;
+    justify-content: space-between;
+    padding-bottom: 2em;
+    
+    /* box-sizing: border-box;  */
+    
+
+}
+.him{
+    color: white;
+    text-align: center;
+    padding-top: 0.5em;
+}
+#product-item{
+    /* padding-top: 0.5em; */
+    padding-inline:0em;
+    /* flex: 1 1 calc(33.33% - 20px);  */
+    /* width: fit-content; */
+    
+    border: 1.2px solid #ddd;  
+    border-radius: 8px;
+    
+    
+   
+    text-align: center;
+    
+    
+}
+.explore{
+    position: absolute;
+    top: 75em;
+    z-index: 1;
+    background-color: black;
+    width: fit-content;
+    color: white;
+    padding-inline: 3em;
+    padding: 0.5em;
+    left: 25em;
+    /* font-size: 28px; */
+    
+    
+}
+.explore2{
+    position: absolute;
+    top: 75em;
+    z-index: 1;
+    background-color: black;
+    width: fit-content;
+    color: white;
+    padding-inline: 3em;
+    padding: 0.5em;
+    left: 65em;
+    
+    
+}
+.log{
+    width: 20px;
+}

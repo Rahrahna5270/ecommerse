@@ -1,0 +1,57 @@
+{% extends "common.html" %}
+{% block title %}cart{% endblock title %}
+{% block content %}
+{% load static %}
+<h3 class="head">Place your Order</h3>
+<div class="order">
+   
+<h4>User Information</h4>
+<p>{{user.username}}</p>
+
+</div>
+<h3 class="heading"> Your Orders</h3>
+
+<div id="tab">
+    <table class="table" >
+        <thead  class="table-secondary">
+         <th></th>
+          <th>Product Name</th>
+          <th>  Qty</th>
+          <th>Price</th>
+        </thead>
+        {% for i in  cart_items %}
+        <tbody>
+        
+        <td><img src="{{i.product.image.url}}" class="orderimage" alt=""></td>
+        <td>{{i.product.name}} <br>{{i.product.description}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.product.rate}}</td>
+        
+
+
+         
+               
+        </tbody>
+        {% endfor %}
+      </table>
+</div>
+
+
+<div class="address">
+    <form  method=post>
+        {% csrf_token %}
+        <div>
+            <p>Enter your Delivery Address</p>
+            <textarea style="width:250px; height: 150px;" placeholder="enter your address" name="address"> {{exist_address}}</textarea>
+    
+        </div>
+        <div>
+            <a href=""><button type="submit"  style="background-color:#866528;color:white;" class="btn btn-warning">Delver to this Address</button></a>
+    
+    
+        </div>
+        
+    </form>
+    
+</div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+{% extends "common.html" %}
+{% block title %}cart{% endblock title %}
+{% block content %}
+{% load static %}
+{% if wishlist %}
+<div class="second">
+    <div>
+        <a href="{% url "home" %}"><p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+          </svg> Back to shopping</p></a>
+    </div>
+   
+</div>
+<h4 style="text-align: center; color: darkolivegreen; padding-top: 1em;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">YOUR WISHLIST</h4>
+
+<hr>
+
+{% for i in wishlist %}
+
+<div style="display: flex;gap: 2em; padding-left: 3em;padding-top: 1em; padding-bottom: 1em;">
+        <div style="padding-left: 0.6em;">
+            <img src="{{i.product.image.url}}" class="viewimages" alt="">
+        </div>
+        <div style="padding-top: 1em;">
+            <h4  class="pronames">{{ i.product.name }}</h4>
+            <h6>{{ i.product.description }}</h6>
+            <p>Price:  $ {{ i.product.rate }}</p>
+            <div style="padding-top: 6em;padding-left: 9em;">
+                <a style="display: flex;gap: 0.5em;" href="{% url "removewish" i.id %}"><div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                  </svg>
+                </div>
+                <div><p>Remove</p></div></a>
+            
+            </div>
+        </div>
+       
+</div>
+    {% endfor %}
+{% else %}
+<div style="text-align: center; padding-top: 4em; height: 400px;">
+    <h5 style="font-family: Georgia, 'Times New Roman', Times, serif;"></strong> Your Wishlist is Empty</h5>
+</div>
+{% endif %}
+{% endblock content %}

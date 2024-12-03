@@ -1,0 +1,25 @@
+{% extends "common.html" %}
+{% load static %}
+{% block title %}products by category{% endblock title %}
+{% block content %}
+    {% if products %}
+        <div id="product-list">
+            {% for product in products %}
+                <div id="product-item"  class="card" >
+                    <a  href="{% url 'viewprod' product.id %}">
+                        <img src="{{product.image.url}}"  class="card-img-top" style="width: 300px;" alt="">
+                        <div class="im" class="card-body"> 
+                            <h4 class="proname">{{ product.name }}</h4>
+                            <p class="prodes">{{ product.description }}</p>
+                            <p>Price: $ {{ product.rate }}</p>
+
+                        </div>
+                   
+                    </a>
+                </div>
+            {% endfor %}
+            </div>
+    {% else %}
+        <p>No products found in this category.</p>
+    {% endif %}
+{% endblock content %}

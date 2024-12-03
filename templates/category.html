@@ -1,0 +1,19 @@
+{% extends "common.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{% load static %}
+<div >
+    <p > Trending Categories</p>
+    
+</div>
+<div >
+    {% for i in category %}
+    <a href=""></a>
+    
+    {% include "categories.html" with data=i %}</a>
+
+    
+    {% endfor %}
+
+</div>
+{% endblock  %}

@@ -1,0 +1,28 @@
+{% extends "common.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in prod %}
+        <div style="display: flex; ">
+            <a href="{% url "viewprod" i.id %}" >
+                <img src="{{i.image.url}}" style="width: 300px;" alt="na">
+                <p>{{i.name}}</p>
+                <p>{{i.description}}</p>
+                <p>{{i.rate}}</p>
+            </a>
+
+        </div>
+    
+
+    {% endfor %}
+</body>
+</html>
+{% endblock  %}

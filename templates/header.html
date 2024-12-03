@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+</head>
+<body>
+<header >
+  <div style="height: 4.7em; background-color: #F2F0E4; display: flex; justify-content: space-between;">
+    <div style="padding: 1em;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="27" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+      </svg>
+
+    </div>
+    <div style="align-items: center; text-align: center; padding-left: 4em;">
+      <img src="{% static 'images/logo-no-background.png' %}" style="height: 52px; width: 200px;  padding-top: 1.5em; " alt="">
+
+    </div>
+    <div style="display: flex; padding-right: 2em; padding-top: 1.1em; ">
+      <div>
+        <form class="d-flex" role="search" method="get" action="{% url 'product_search' %}" >
+          <input class="form-control me-4" style="width: 230px;" type="search" placeholder="What are you looking for?" aria-label="Search">
+          
+        </form>
+      </div>
+      <div style="display: flex; gap: 1em;">
+                  
+        <a href="{% url "wishpage" %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="black" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16" >
+         <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+         </svg>
+        </a>
+           
+        <a href="{% url "cartpage" %}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="black" text-align="center" fill="currentColor" class="bi bi-cart-dash" viewBox="0 0 16 16">
+          <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1z"/>
+          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+          </svg>
+        </a>
+        <a href="{% url "logout" %}">logout</a>
+       
+        <!-- <a  data-bs-toggle="modal" data-bs-target="#exampleModal" href="">Sign Up</a>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">Welcome To Oxyluxe</h2>
+        <p></p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Sign Up</p>
+        <div style="padding-inline: 2em;">
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" name="'username" class="form-control" placeholder="Username" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div>
+            <div style="text-align: center; padding-top: 0.5em;"><button type="submit" class="btn btn-danger">Sign Up</button></div>
+            
+            
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> 
+      </div>
+    </div>
+  </div>
+</div> -->
+<a  data-bs-toggle="modal" data-bs-target="#exampleModal" href="">Sign Up/Login</a>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"  style="text-align: center;">
+        <h2 class="modal-title fs-5" id="exampleModalLabel">Welcome To Oxyluxe</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- Left Column: Image -->
+          <div class="col-md-4">
+            <img src="{% static "images\C:\Users\LENOVO\.vscode\oxyluxe 2\project\static\images\Screenshot 2024-10-05 222629-fotor-2024100522471.png" %}" alt="Oxyluxe" class="img-fluid" style="width: 500px; height: 340px; padding: 0;">
+          </div>
+
+          <!-- Right Column: Sign Up Form -->
+          <div class="col-md-8">
+            <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Sign Up</p>
+            <div style="padding-inline: 2em;">
+              <form action="{% url "signup" %}" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                  <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div style="text-align: center; padding-top: 0.5em;padding-bottom: 0.5em; width: 300px; padding-left: 4em;">
+                  <button style=" width: 300px;background-color: #866528;" type="submit" class="btn btn-danger">Sign Up</button>
+                </div>
+              </form>
+              <div style=" text-align: center;">
+                <p>Already have an Account ?</p>
+                <a style="color: #866528; text-decoration: underline;"  data-bs-toggle="modal" data-bs-target="#login" href="">Login</a>
+              </div>  
+               
+                
+             
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" aria-labelledby="Label" aria-hidden="true" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header"  style="text-align: center;">
+        <h2 class="modal-title fs-5" id="Label">Welcome To Oxyluxe</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- Left Column: Image -->
+          <div class="col-md-4">
+            <img src="{% static "images\C:\Users\LENOVO\.vscode\oxyluxe 2\project\static\images\Screenshot 2024-10-05 222629-fotor-2024100522471.png" %}" alt="Oxyluxe" class="img-fluid" style="width: 500px; height: 340px; padding: 0;">
+          </div>
+
+          <!-- Right Column: Sign Up Form -->
+          <div class="col-md-8">
+            <p style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Login</p>
+            <div style="padding-inline: 2em;">
+              <form action="{% url "loginpage" %}" method="post">
+                {% csrf_token %}
+                
+                <div class="input-group mb-3">
+                  <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                </div>
+                <div style="text-align: center; padding-top: 0.5em;padding-bottom: 0.5em; width: 300px; padding-left: 4em;">
+                  <button style=" width: 300px;background-color: #866528;" type="submit" class="btn btn-danger">Login</button>
+                </div>
+              </form>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+      </div>
+  
+    </div>
+
+
+  </div>
+  
+ 
+  <div class="category-list" style="height: 2em; background-color: #dececee4; display: flex; gap: 2.5em; align-items: center; text-align: center; padding-left: 23em;">
+    {% for category in categories %}
+        <li class="category-item">
+            <span class="category-name">{{ category.name }}</span>
+            <ul class="subcategory-list">
+                {% for subcategory in catcategories %}
+                    {% if subcategory.category.id == category.id %}
+                        <li class="subcategory-item">
+                            <a href="{% url 'sub' subcategory.id %}">
+                                <p>{{ subcategory.categoryname }}</p>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    {% endfor %}
+  </div>
+
+</header>    
+</body>     
+      
+
+
